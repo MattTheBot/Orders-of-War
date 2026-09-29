@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topo Tactics — Municipal Layer</title>
+    <title>Topo Tactics - Municipal & Town</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="game-container"></div>
+    
     <div id="ui-overlay">
-        <div id="info-panel">
-            <h3>Municipal Layer</h3>
-            <p>Click the map to move a unit. Stepped terrain follows real contour logic.</p>
-            <p id="terrain-info">Terrain: —</p>
+        <div id="panel">
+            <h2>Topo Tactics v0.3</h2>
+            
+            <div class="control-group">
+                <label for="heightmap-upload">1. Upload Heightmap (PNG)</label>
+                <input type="file" id="heightmap-upload" accept="image/png, image/jpeg">
+            </div>
+
+            <div class="control-group">
+                <button id="btn-mode-town" class="active">Mode: Place Town</button>
+                <button id="btn-mode-view">Mode: Pan Camera</button>
+            </div>
+
+            <div id="status-text">
+                Upload a map, then click the terrain to generate a town.
+            </div>
+            
+            <div class="legend">
+                <p><span style="color:#bae1ff">■</span> Pastel Blue (Friendly)</p>
+                <p><span style="color:#ffb3ba">■</span> Pastel Red (Enemy)</p>
+            </div>
         </div>
     </div>
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-        }
-    }
-    </script>
+
+    <!-- Direct CDN Import to avoid GitHub Pages issues -->
     <script type="module" src="main.js"></script>
 </body>
 </html>
