@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topo Tactics v0.1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="game-container"></div>
+    
+    <div id="ui-overlay">
+        <div id="layer-controls">
+            <button id="btn-regional" class="active">Regional Layer</button>
+            <button id="btn-municipal">Municipal Layer</button>
+            <button id="btn-town">Town Layer (WIP)</button>
+        </div>
+        <div id="info-panel">
+            <h3>Topo Tactics</h3>
+            <p>Selected: <span id="selected-unit">None</span></p>
+            <p>Terrain: <span id="terrain-info">-</span></p>
+            <p>Click on the map to move the selected unit.</p>
+        </div>
+    </div>
+
+    <!-- Import Map for Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
