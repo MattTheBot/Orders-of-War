@@ -3,38 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topo Tactics - Municipal & Town</title>
+    <title>Orders of War</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Standard CDN loads - Bulletproof for GitHub Pages and Local Testing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
     <div id="game-container"></div>
     
     <div id="ui-overlay">
         <div id="panel">
-            <h2>Topo Tactics v0.3</h2>
+            <h1>ORDERS OF WAR</h1>
+            <p class="subtitle">Municipal & Town Layer Prototype</p>
             
             <div class="control-group">
-                <label for="heightmap-upload">1. Upload Heightmap (PNG)</label>
-                <input type="file" id="heightmap-upload" accept="image/png, image/jpeg">
+                <button id="btn-regenerate">Regenerate Vienna Basin</button>
             </div>
 
             <div class="control-group">
-                <button id="btn-mode-town" class="active">Mode: Place Town</button>
-                <button id="btn-mode-view">Mode: Pan Camera</button>
+                <label>Camera Layer Constraint:</label>
+                <div id="layer-display">Municipal Layer (Strategic)</div>
             </div>
 
             <div id="status-text">
-                Upload a map, then click the terrain to generate a town.
+                Scroll to zoom in and transition to the Town Layer.
             </div>
             
             <div class="legend">
-                <p><span style="color:#bae1ff">■</span> Pastel Blue (Friendly)</p>
-                <p><span style="color:#ffb3ba">■</span> Pastel Red (Enemy)</p>
+                <p><span style="color:#bae1ff">■</span> Friendly Forces (Blue)</p>
+                <p><span style="color:#ffb3ba">■</span> Enemy Forces (Red)</p>
+                <p><span style="color:#baffc9">■</span> Neutral / Infantry (Green)</p>
             </div>
         </div>
     </div>
 
-    <!-- Direct CDN Import to avoid GitHub Pages issues -->
-    <script type="module" src="main.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
