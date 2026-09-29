@@ -1,11 +1,12 @@
 :root {
     --bg-dark: #141b26;
-    --panel-bg: rgba(26, 32, 44, 0.9);
+    --panel-bg: rgba(20, 27, 38, 0.95);
     --text-main: #e2e8f0;
-    --text-muted: #a0aec0;
-    --border: #4a5568;
+    --text-muted: #8a9bb3;
+    --border: #2d3748;
     --accent-blue: #bae1ff;
     --accent-red: #ffb3ba;
+    --accent-green: #baffc9;
 }
 
 body, html {
@@ -15,7 +16,7 @@ body, html {
     height: 100%;
     overflow: hidden;
     background-color: var(--bg-dark);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Courier New', Courier, monospace; /* Military feel */
     color: var(--text-main);
 }
 
@@ -39,67 +40,67 @@ body, html {
 #panel {
     background-color: var(--panel-bg);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 20px;
-    width: 280px;
+    width: 300px;
     pointer-events: auto;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
-h2 {
-    margin: 0 0 15px 0;
-    font-size: 1.1rem;
+h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
     color: var(--accent-blue);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .control-group {
     margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-size: 0.85rem;
-    margin-bottom: 5px;
-    color: var(--text-muted);
-}
-
-input[type="file"] {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    width: 100%;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 15px;
 }
 
 button {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 8px;
-    background-color: #2d3748;
+    padding: 10px;
+    background-color: #1a202c;
     border: 1px solid var(--border);
     color: var(--text-main);
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    text-transform: uppercase;
     transition: 0.2s;
 }
 
-button:hover { background-color: #4a5568; }
-button.active { background-color: #5a7a9a; border-color: var(--accent-blue); }
+button:hover { background-color: #2d3748; border-color: var(--text-muted); }
+
+#layer-display {
+    font-size: 0.85rem;
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-top: 5px;
+}
 
 #status-text {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid var(--border);
     line-height: 1.4;
 }
 
 .legend {
     margin-top: 15px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
 }
 .legend p { margin: 4px 0; }
