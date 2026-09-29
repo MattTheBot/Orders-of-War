@@ -1,0 +1,21 @@
+{
+  "name": "Topo Tactics",
+  "short_name": "TopoTactics",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a202c",
+  "theme_color": "#1a202c",
+  "description": "A 3D non-tile-based tactical game.",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192/1a202c/e2e8f0?text=TT",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512/1a202c/e2e8f0?text=TT",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
