@@ -1,15 +1,105 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { overflow: hidden; background: #1a202c; font-family: 'Segoe UI', sans-serif; color: #e2e8f0; }
-#game-container { position: fixed; inset: 0; }
-#ui-overlay { position: fixed; inset: 0; pointer-events: none; padding: 24px; }
-#info-panel {
-    pointer-events: auto;
-    background: rgba(26, 32, 44, 0.88);
-    border: 1px solid #4a5568;
-    border-radius: 6px;
-    padding: 16px 20px;
-    width: 280px;
-    backdrop-filter: blur(6px);
+:root {
+    --bg-dark: #141b26;
+    --panel-bg: rgba(26, 32, 44, 0.9);
+    --text-main: #e2e8f0;
+    --text-muted: #a0aec0;
+    --border: #4a5568;
+    --accent-blue: #bae1ff;
+    --accent-red: #ffb3ba;
 }
-#info-panel h3 { color: #bae1ff; margin-bottom: 8px; font-size: 1rem; }
-#info-panel p { font-size: 0.85rem; color: #a0aec0; line-height: 1.5; }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-main);
+}
+
+#game-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+#panel {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    pointer-events: auto;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    color: var(--accent-blue);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+}
+
+input[type="file"] {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #2d3748;
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+button:hover { background-color: #4a5568; }
+button.active { background-color: #5a7a9a; border-color: var(--accent-blue); }
+
+#status-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    line-height: 1.4;
+}
+
+.legend {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+.legend p { margin: 4px 0; }
