@@ -1,101 +1,15 @@
-:root {
-    --bg-dark: #1a202c;
-    --bg-panel: rgba(26, 32, 44, 0.85);
-    --text-main: #e2e8f0;
-    --text-muted: #a0aec0;
-    --accent-pastel-red: #ffb3ba;
-    --accent-pastel-blue: #bae1ff;
-    --accent-pastel-green: #baffc9;
-    --border-color: #4a5568;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: var(--bg-dark);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-main);
-}
-
-#game-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-#ui-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Let clicks pass through to canvas */
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-#layer-controls {
-    pointer-events: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-button {
-    background-color: var(--bg-panel);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: all 0.2s ease;
-    backdrop-filter: blur(4px);
-}
-
-button:hover {
-    background-color: #2d3748;
-}
-
-button.active {
-    background-color: #4a5568;
-    border-color: var(--text-main);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { overflow: hidden; background: #1a202c; font-family: 'Segoe UI', sans-serif; color: #e2e8f0; }
+#game-container { position: fixed; inset: 0; }
+#ui-overlay { position: fixed; inset: 0; pointer-events: none; padding: 24px; }
 #info-panel {
     pointer-events: auto;
-    background-color: var(--bg-panel);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    width: 250px;
-    backdrop-filter: blur(4px);
+    background: rgba(26, 32, 44, 0.88);
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    padding: 16px 20px;
+    width: 280px;
+    backdrop-filter: blur(6px);
 }
-
-#info-panel h3 {
-    margin-top: 0;
-    color: var(--accent-pastel-blue);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
-}
-
-#info-panel p {
-    font-size: 0.9em;
-    color: var(--text-muted);
-    margin: 8px 0;
-}
-
-#selected-unit {
-    color: var(--accent-pastel-red);
-    font-weight: bold;
-}
+#info-panel h3 { color: #bae1ff; margin-bottom: 8px; font-size: 1rem; }
+#info-panel p { font-size: 0.85rem; color: #a0aec0; line-height: 1.5; }
